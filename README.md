@@ -1,0 +1,1 @@
+This is me trying to learn how to use react because I want to make a blog.
