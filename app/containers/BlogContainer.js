@@ -1,16 +1,18 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Axios from 'axios';
 import Blog from '../components/Blog';
 import cosmicHelpers from '../utils/cosmicHelpers';
 
-var BlogContainer = React.createClass({
-    getInitialState: function() {
-        return {
+export default class BlogContainer extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             isLoading: true,
             blogPosts: []
-        }    
-    },
-    componentDidMount: function() {
+        };
+    }
+
+    componentDidMount() {
         cosmicHelpers.getBlogPosts()
             .then(function(blogPosts) {
                 this.setState({
@@ -18,14 +20,13 @@ var BlogContainer = React.createClass({
                     blogPosts: blogPosts,
                 })
             }.bind(this));
-    },
-    render: function() {
+    }
+
+    render() {
         return (
             <Blog 
                 isLoading={this.state.isLoading}
                 blogPosts={this.state.blogPosts} />
         )
     }
-})
-
-module.exports = BlogContainer;
+}

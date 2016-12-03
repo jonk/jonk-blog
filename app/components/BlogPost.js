@@ -1,18 +1,17 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React, {PropTypes, Component} from 'react';
 
-function BlogPost(props) {
-    return (
-        <div>
-            <h3>{props.title}</h3>
-            <p>{props.content}</p>
-        </div>
-    )
+export default class BlogPost extends Component {
+    render() {
+        return (
+            <div>
+                <h3>{this.props.title}</h3>
+                <p>{this.props.content}</p>
+            </div>
+        )
+    }
 }
 
 BlogPost.propTypes = {
     content: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
 }
-
-module.exports = BlogPost;
