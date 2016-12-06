@@ -1,4 +1,5 @@
 import React, {PropTypes, Component} from 'react';
+import renderHTML from 'react-render-html';
 
 export default class BlogPost extends Component {
     render() {
@@ -14,11 +15,11 @@ export default class BlogPost extends Component {
             marginBottom: 15,
             marginLeft: 20,
             color: "#666"
-        }
+        };
         return (
             <div>
                 <h3 style={blogHeader}>{this.props.title}</h3>
-                <p style={blogParagraph} dangerouslySetInnerHTML={{__html: this.props.content }} />
+                <div style={blogParagraph}>{renderHTML(this.props.content)}</div>
             </div>
         )
     }
