@@ -4,7 +4,8 @@ import BlogPost from './BlogPost';
 //maybe refactor this to do on change
 export default class Blog extends Component {
     render() {
-        return (this.props.isLoading === true 
+        return (
+            this.props.isLoading === true 
             ?  <p> Loading </p>
             : <div> {getPosts(this.props.blogPosts)} </div>  
         )

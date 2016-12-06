@@ -7,7 +7,7 @@
     "develop": "webpack-dev-server",
     "production": "webpack -p",
     "build": "babel app -d dist --presets es2015,react",
-    "start": "webpack -p && babel app -d dist --presets es2015,react && node dist/server.js"
+    "start": "npm run production && npm run build && node dist/server.js"
   },
   "repository": {
     "type": "git",
